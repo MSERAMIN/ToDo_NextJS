@@ -14,10 +14,10 @@ const updateTodo = (title, description, todo) => {
   }
   
  export default function TodoDialog(props) {
+    const [title, setTitle] = useState(props.item.title)
+    const [description, setDescription] = useState(props.item.description)
+    
     if (props.isOpen === true) {
-
-        const [title, setTitle] = useState(props.item.title)
-        const [description, setDescription] = useState(props.item.description)
 
         return (
             <div className="todo-dialog">
@@ -37,5 +37,7 @@ const updateTodo = (title, description, todo) => {
                    </div>
             </div>
         )
+    } else {
+        return <></>
     }
  } 
